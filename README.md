@@ -7,6 +7,19 @@ The Alchemical Transfer Method for OpenMM (AToM-OpenMM) is an extensible Python 
 
 This version of AToM uses [ATMForce](https://github.com/openmm/openmm/pull/4110) in the 8.4.0 or later versions of [OpenMM](https://github.com/openmm/openmm). 
 
+Updates
+-------
+- Code was modified to be able to work with membrane proteins
+- examples will follow shortly
+- NOTE: lipid parameters (e.g. POPC) may have to be manually to "amber14-all.xml" inside OpenMM directory (installed under the Conda environment) as:
+     <ForceField>
+       <Include file="amber14/protein.ff14SB.xml"/>
+       <Include file="amber14/DNA.OL15.xml"/>
+       <Include file="amber14/RNA.OL3.xml"/>
+       <Include file="amber14/lipid17_mod.xml"/>   <<-- ADDED
+     </ForceField>
+     - On this particular case, CHARMM36 atom names were ported to AMBER to allow successfull parameterization by OpenMM
+
 Credits
 -------
 
